@@ -37,7 +37,20 @@ test ('locator syntax rules' , async ({page}) => {
     page.locator(':text-is("Using the grid")')
 
 
-
-
 }) 
+
+test ('visual locator', async ({page}) => {
+
+    await page.getByRole('textbox', {name: "Email"}).first().click()
+
+    await page.getByLabel('Email').first().click()
+
+    await page.getByPlaceholder('Email').first().click()
+
+    await page.getByText('Inline form').first().click()
+
+    await page.getByTitle('IoT Dashboard').first().click()
+
+    
+})
 
